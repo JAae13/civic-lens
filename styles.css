@@ -1,10 +1,52 @@
-/* CSS by ///ADD/// YOUR NAME */
+/* CSS by Jaelynn Shurley */
 
 /* Imported Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 /* ///ADD/// CSS Reset */
-
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 /* Root Variables */
 :root {
@@ -14,8 +56,8 @@
   --truth-text: #333;
   --story-subtitle: #457B9D;
   --font-body: "Source Sans 3", sans-serif;
-  --font-heading: 'Merriweather', serif;
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  --font-heading: "Merriweather", serif;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
   --transition: all 0.5s ease;
 }
 
@@ -24,10 +66,12 @@ body.light-mode {
   background-color: var(--watchdog-white);
   color: var(--truth-text);
 }
+
 body.dark-mode {
   background-color: var(--truth-text);
   color: var(--watchdog-white);
 }
+
 #theme-toggle {
   position: absolute;
   top: 1rem;
@@ -35,31 +79,386 @@ body.dark-mode {
   background-color: var(--watchdog-white);
   border: 1px solid var(--blue-bulletin);
   border-radius: 1.5rem;
+  padding: 0.35rem 0.5rem;
   cursor: pointer;
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+body.dark-mode #theme-toggle {
+  background-color: var(--blue-bulletin);
+  border-color: var(--watchdog-white);
+}
+
+#theme-toggle svg {
+  display: block;
 }
 
 /* ///ADD/// Skip Link Styles */
+#skip {
+  position: absolute;
+  left: -9999px;
+  top: 1rem;
+  background-color: var(--news-flash);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  z-index: 2000;
+}
+
+#skip:focus {
+  left: 1rem;
+}
 
 /* ///ADD/// Navigation Styles */
+.mobile-nav {
+  margin-top: 1.5rem;
+}
+
+.menu-button {
+  display: inline-block;
+  background-color: var(--news-flash);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgba(29, 53, 87, 0.08);
+  border-radius: 0.75rem;
+}
+
+.menu li + li {
+  margin-top: 0.75rem;
+}
+
+.menu a {
+  color: var(--blue-bulletin);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#menu-toggle:checked + .menu-button + .menu {
+  display: block;
+}
+
+body.dark-mode .menu {
+  background-color: rgba(241, 250, 238, 0.08);
+}
+
+body.dark-mode .menu a {
+  color: var(--watchdog-white);
+}
 
 /* ///ADD/// Global Layout Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+header,
+main,
+footer {
+  width: min(92%, 1100px);
+  margin: 0 auto;
+}
+
+header {
+  position: relative;
+  padding: 4.5rem 0 2rem;
+  border-bottom: 4px solid var(--news-flash);
+}
+
+main {
+  padding: 2rem 0;
+}
+
+section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+body.dark-mode section {
+  background-color: #1f1f1f;
+}
+
+article {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border-left: 4px solid var(--story-subtitle);
+  background-color: rgba(69, 123, 157, 0.08);
+  border-radius: 0.5rem;
+}
+
+body.dark-mode article {
+  background-color: rgba(241, 250, 238, 0.06);
+}
+
+video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+}
+
+form {
+  margin-top: 1rem;
+}
+
+fieldset {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 2px solid var(--story-subtitle);
+  border-radius: 0.75rem;
+}
+
+footer {
+  padding: 2rem 0 3rem;
+  border-top: 4px solid var(--news-flash);
+}
+
+footer ul {
+  margin: 1rem 0;
+}
+
+footer li + li {
+  margin-top: 0.5rem;
+}
 
 /* ///ADD/// Global Text Styles */
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
 
+h1 {
+  font-size: 2.5rem;
+  color: var(--blue-bulletin);
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: var(--news-flash);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: var(--blue-bulletin);
+  margin-bottom: 0.75rem;
+}
+
+p,
+blockquote,
+label,
+legend,
+a,
+button,
+input {
+  font-family: var(--font-body);
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: var(--story-subtitle);
+  line-height: 1.5;
+}
+
+blockquote.tagline {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--news-flash);
+  font-style: italic;
+}
+
+a {
+  color: var(--news-flash);
+  transition: var(--transition);
+}
+
+a:hover,
+a:focus {
+  opacity: 0.8;
+}
+
+label,
+legend {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+input[type="text"],
+input[type="tel"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #bbb;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="tel"] {
+  background-color: #2b2b2b;
+  color: var(--watchdog-white);
+  border-color: #666;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+  margin-top: 1rem;
+}
+
+fieldset label {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+button[type="submit"] {
+  margin-top: 1.25rem;
+  padding: 0.85rem 1.25rem;
+  background-color: var(--news-flash);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus,
+.menu-button:hover,
+.menu-button:focus {
+  opacity: 0.9;
+}
+
+body.dark-mode h1,
+body.dark-mode h3 {
+  color: var(--watchdog-white);
+}
+
+body.dark-mode h2 {
+  color: #ff7b86;
+}
+
+body.dark-mode .tagline {
+  color: #b8d7ea;
+}
+
+body.dark-mode a {
+  color: #ff9aa2;
+}
 
 /* ///ADD/// medium styles 620px */
+@media screen and (min-width: 620px) {
+  h1 {
+    font-size: 3rem;
+  }
 
+  section {
+    padding: 2rem;
+  }
+
+  .menu {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0;
+    background: none;
+    margin-top: 1rem;
+  }
+
+  .menu li + li {
+    margin-top: 0;
+  }
+
+  .menu-button {
+    display: none;
+  }
+}
 
 /* ///ADD/// large styles 920px */
+@media screen and (min-width: 920px) {
+  #featured-articles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 
+  #featured-articles h2 {
+    grid-column: 1 / -1;
+  }
+
+  #breaking-news article {
+    padding: 1.5rem;
+  }
+}
 
 /* ///ADD/// x-large styles 1024px */
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 3.4rem;
+  }
 
+  main {
+    padding: 3rem 0;
+  }
+
+  section {
+    margin-bottom: 2.5rem;
+  }
+}
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
-
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto;
+    transition: none !important;
+  }
+}
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
+  .mobile-nav:has(#menu-toggle:checked) .menu {
+    display: block;
+  }
 
+  @media screen and (min-width: 620px) {
+    .mobile-nav:has(#menu-toggle:checked) .menu {
+      display: flex;
+    }
+  }
 }
