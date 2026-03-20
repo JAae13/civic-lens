@@ -528,10 +528,10 @@ body.dark-mode a {
   .mobile-nav:has(#menu-toggle:checked) .menu {
     display: block;
   }
+}
 
-  @media screen and (min-width: 620px) {
-    .mobile-nav:has(#menu-toggle:checked) .menu {
-      display: flex;
-    }
+@supports (selector(:has(*))) and (min-width: 620px) {
+  .mobile-nav:has(#menu-toggle:checked) .menu {
+    display: flex;
   }
 }
