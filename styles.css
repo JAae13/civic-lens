@@ -524,14 +524,12 @@ body.dark-mode a {
 }
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
-@supports (selector(:has(*))) {
-  .mobile-nav:has(#menu-toggle:checked) .menu {
-    display: block;
-  }
+#menu-toggle:checked + .menu-button + .menu {
+  display: block;
 }
 
-@supports (selector(:has(*))) and (min-width: 620px) {
-  .mobile-nav:has(#menu-toggle:checked) .menu {
+@media screen and (min-width: 620px) {
+  #menu-toggle:checked + .menu-button + .menu {
     display: flex;
   }
 }
