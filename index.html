@@ -7,25 +7,20 @@
   <meta name="description" content="Civic Lens is an independent news organization committed to unbiased reporting, investigative journalism, and truth-driven storytelling.">
   <meta name="author" content="Civic Lens">
 
-<!-- ADD Open Graph Meta for title, description, image, url, type -->
   <meta property="og:title" content="Civic Lens">
   <meta property="og:description" content="Civic Lens is an independent news organization committed to unbiased reporting, investigative journalism, and truth-driven storytelling.">
   <meta property="og:image" content="images/civic-lens-preview.jpg">
   <meta property="og:url" content="https://example.com/civic-lens">
   <meta property="og:type" content="website">
 
-<!-- ADD link to stylesheet -->
   <link rel="stylesheet" href="styles.css">
 
   <title>Civic Lens</title>
 </head>
-<body class="light-mode">
-<!-- ADD semantic and validated HTML -->
-<!-- ADD skip to main content -->
-  <a id="skip" href="#main-content">Skip to main content</a>
 
+<body>
   <header>
-    <button id="theme-toggle" aria-label="Toggle light/dark mode">
+    <button id="theme-toggle" aria-label="Toggle light and dark mode" type="button">
       <svg width="35px" height="35px" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <defs><clipPath id="a"><path d="m18.512 18.512h62.977v62.977h-62.977z"/></clipPath></defs>
         <g clip-path="url(#a)"><path d="m65.098 68.164c-9.2812 7.7266-23.09 7.2422-31.797-1.4648-8.707-8.7031-9.1953-22.516-1.4648-31.793 0.74609-0.89844 2.1016-0.96875 2.9258-0.14453l30.473 30.477c0.82422 0.82422 0.75391 2.1797-0.13672 2.9258m7.168-40.43c-12.297-12.297-32.234-12.297-44.531 0-12.297 12.301-12.297 32.234 0 44.531s32.234 12.297 44.531 0 12.297-32.23 0-44.531" fill="#333" fill-rule="evenodd"/></g>
@@ -34,7 +29,7 @@
 
     <h1>Civic Lens</h1>
     <p class="tagline">See Clearly. Know Deeply. Act Justly.</p>
-      
+
     <nav class="mobile-nav" aria-label="Mobile Navigation">
       <input type="checkbox" id="menu-toggle" hidden>
       <label for="menu-toggle" class="menu-button">Menu</label>
@@ -46,7 +41,7 @@
       </ul>
     </nav>
   </header>
-      
+
   <main id="main-content">
     <section>
       <h2>Welcome to Civic Lens</h2>
@@ -65,7 +60,7 @@
           Your browser does not support the video tag.
         </video>
       </article>
-        
+
       <article>
         <h3>Voter Suppression Bill Faces Pushback in State Supreme Court</h3>
         <p>Civil rights advocates argue that the bill disenfranchises thousands of voters and potential voters of color and those in rural areas of the country.</p>
@@ -75,143 +70,168 @@
         </video>
       </article>
     </section>
-        
+
     <section id="featured-articles">
       <h2>Featured Articles</h2>
-        
+
       <article>
         <h3>The Cost of Silence: Whistleblower Stories from Inside Tech Giants</h3>
         <p>Former employees speak out about ethical breaches in data privacy and surveillance.</p>
       </article>
-        
+
       <article>
         <h3>Unequal Justice: How Bail Systems Harm the Poor</h3>
         <p>An investigative series on cash bail and its disproportionate impact.</p>
       </article>
-        
+
       <article>
         <h3>Invisible Work: The Lives of Migrant Caregivers</h3>
         <p>Humanizing the labor that keeps households and economies afloat.</p>
       </article>
-        
+
       <article>
         <h3>Redlined Still: A New Map of Modern-Day Housing Discrimination</h3>
         <p>Data visualization showing systemic inequality in real estate today.</p>
       </article>
-        
+
       <article>
         <h3>Climate Injustice: Who Pays for Pollution?</h3>
         <p>Communities of color bear the brunt of environmental damage.</p>
       </article>
-        
+
       <article>
         <h3>Teaching Under Fire: The Fight for Inclusive Education</h3>
         <p>Teachers navigate book bans, curriculum restrictions, and culture wars.</p>
       </article>
-        
+
       <article>
         <h3>Food Deserts and Corporate Abandonment</h3>
         <p>Why access to nutrition is a zip code lottery.</p>
       </article>
-        
+
       <article>
         <h3>Policing Mental Health: A Broken Response System</h3>
         <p>Examining police interactions with those in crisis.</p>
       </article>
-        
+
       <article>
         <h3>The Disinformation Economy</h3>
         <p>Tracing profit motives behind fake news empires.</p>
       </article>
-        
+
       <article>
         <h3>Facing the Algorithm: AI and Racial Bias</h3>
         <p>The coded inequalities that shape our lives.</p>
       </article>
-        
+
       <article>
         <h3>The Voting Maze</h3>
         <p>A guide to understanding your rights amid changing laws.</p>
       </article>
-        
+
       <article>
         <h3>After the Cameras Leave: Long-Term Crisis Recovery</h3>
         <p>Rebuilding trust and infrastructure in disaster-hit communities.</p>
       </article>
     </section>
-        
+
     <section id="alerts">
       <h2>Stay Informed. Stay Empowered.</h2>
       <p>Receive text messages with the news you want to know.</p>
-        
+
       <form action="https://wp.zybooks.com/form-viewer.php" method="post">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required>
-        
-        <label for="mobile">Mobile</label>
-        <input type="tel" name="mobile" id="mobile" required>
-        
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div>
+          <label for="mobile">Mobile</label>
+          <input type="tel" id="mobile" name="mobile" required>
+        </div>
+
         <fieldset>
           <legend>Notification Preferences</legend>
-        
-          <input type="checkbox" name="preferences" id="breaking-news-alert" value="Breaking News">
-          <label for="breaking-news-alert">Breaking News</label>
-        
-          <input type="checkbox" name="preferences" id="politics" value="Politics">
-          <label for="politics">Politics</label>
-        
-          <input type="checkbox" name="preferences" id="weather" value="Weather">
-          <label for="weather">Weather</label>
-        
-          <input type="checkbox" name="preferences" id="sports" value="Sports">
-          <label for="sports">Sports</label>
-        
-          <input type="checkbox" name="preferences" id="entertainment" value="Entertainment">
-          <label for="entertainment">Entertainment</label>
-        
-          <input type="checkbox" name="preferences" id="world" value="World">
-          <label for="world">World</label>
-        
-          <input type="checkbox" name="preferences" id="financial" value="Financial">
-          <label for="financial">Financial</label>
+
+          <div>
+            <input type="checkbox" id="breaking-news-alerts" name="preferences" value="Breaking News">
+            <label for="breaking-news-alerts">Breaking News</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="politics" name="preferences" value="Politics">
+            <label for="politics">Politics</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="weather" name="preferences" value="Weather">
+            <label for="weather">Weather</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="sports" name="preferences" value="Sports">
+            <label for="sports">Sports</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="entertainment" name="preferences" value="Entertainment">
+            <label for="entertainment">Entertainment</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="world" name="preferences" value="World">
+            <label for="world">World</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="financial" name="preferences" value="Financial">
+            <label for="financial">Financial</label>
+          </div>
         </fieldset>
-        
+
         <button type="submit">Subscribe</button>
       </form>
     </section>
   </main>
-      
+
   <footer id="social">
     <h2>Follow Us</h2>
     <ul>
-      <li><a href="https://x.com">Twitter/X</a></li>
-      <li><a href="https://instagram.com">Instagram</a></li>
-      <li><a href="https://youtube.com">YouTube</a></li>
-      <li><a href="https://tiktok.com">TikTok</a></li>
-      <li><a href="https://linkedin.com">LinkedIn</a></li>
+      <li><a href="#">Twitter/X</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">YouTube</a></li>
+      <li><a href="#">TikTok</a></li>
+      <li><a href="#">LinkedIn</a></li>
     </ul>
-        
+
     <p>&copy; 2025 Civic Lens. All rights reserved.</p>
   </footer>
-        
+
   <script>
-    const toggleButton = document.getElementById('theme-toggle');
-  
-    toggleButton.addEventListener('click', () => {
-      const body = document.body;
-  
-      // Toggle manually between light and dark mode
-      if (body.classList.contains('dark-mode')) {
-        body.classList.remove('dark-mode');
-        body.classList.add('light-mode');
-      } else if (body.classList.contains('light-mode')) {
-        body.classList.remove('light-mode');
-        body.classList.add('dark-mode');
-      } else {
-        // No class set yet, determine system preference
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        body.classList.add(prefersDark ? 'light-mode' : 'dark-mode');
-      }
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else if (savedTheme === 'light') {
+      document.body.classList.add('light-mode');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const toggleButton = document.getElementById('theme-toggle');
+
+      toggleButton.addEventListener('click', () => {
+        const body = document.body;
+
+        if (body.classList.contains('dark-mode')) {
+          body.classList.remove('dark-mode');
+          body.classList.add('light-mode');
+          localStorage.setItem('theme', 'light');
+        } else {
+          body.classList.remove('light-mode');
+          body.classList.add('dark-mode');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
     });
   </script>
 </body>
